@@ -199,3 +199,41 @@ bindsym Mod4+Mod1+minus move scratchpad
 
 # Show the first scratchpad window
 bindsym Mod4+minus scratchpad show
+
+# The middle button over a titlebar kills the window
+bindsym --release button2 kill
+# The right button toggles floating
+bindsym $mod+button3 floating toggle
+
+# Hiding borders when not needed
+hide_edge_borders smart
+smart_borders on
+
+# switch between the current and the previously focused one
+bindsym $mod+b workspace back_and_forth
+bindsym $mod+Shift+b move container to workspace back_and_forth
+
+# make window sticky
+bindsym Mod4+p sticky toggle
+
+# Clients on specific workspaces
+assign [class="Tilix"] 2
+assign [class="Firefox"] 1
+
+# read 1 character and mark the current window with this character
+bindsym $mod+m exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
+
+# read 1 character and go to the window with the character
+bindsym $mod+g exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
+bindsym $mod+u unmark
+
+# Launches when i3 is started
+#exec Tilix
+#exec Firefox
+
+# exec shortcuts (using hyper key)
+bindsym Control+Mod1+Shift+Mod4+f exec firefox
+bindsym Control+Mod1+Shift+Mod4+t exec /home/vivian/trilium-linux-x64/trilium
+bindsym Control+Mod1+Shift+Mod4+i exec inkscape
+bindsym Control+Mod1+Shift+Mod4+n exec nautilus
+bindsym Control+Mod1+Shift+Mod4+e exec emacs
